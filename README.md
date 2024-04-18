@@ -1,1 +1,1 @@
-# exercice-composition-enum
+# exercices-java
