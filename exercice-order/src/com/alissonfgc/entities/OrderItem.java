@@ -7,14 +7,14 @@ public class OrderItem {
 	//relation
 	private Product product;
 	
-	public OrderItem(int quantity, Double price) {
+	public OrderItem(int quantity, Double price, Product product) {
 		this.quantity = quantity;
 		this.price = price;
-		
+		this.product = product;	
 	}
-	
-	public Double SubTotal() {
-		return price * quantity;
+
+	public int getQuantity() {
+		return quantity;
 	}
 
 	public Product getProduct() {
@@ -23,6 +23,10 @@ public class OrderItem {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+	
+	public Double SubTotal() {
+		return price * quantity;
 	}
 	
 }

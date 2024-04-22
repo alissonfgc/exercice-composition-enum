@@ -1,11 +1,19 @@
 package com.alissonfgc.entities;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
 	private String name;
 	private String email;
 	private LocalDate birthDate;
+	static DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+	
+	public Client(String name, String email, String birthDate) {
+		this.name = name;
+		this.email = email;
+		this.birthDate = LocalDate.parse(birthDate, fmt);
+	}
 	
 	public String getName() {
 		return name;
