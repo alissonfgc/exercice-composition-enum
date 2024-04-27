@@ -20,6 +20,11 @@ public class LegalPerson extends Taxpayer{
 	public void setNumberOfEmployees(int numberOfEmployees) {
 		this.numberOfEmployees = numberOfEmployees;
 	}
+	
+	@Override
+	public String toString() {
+		return getName() + ": $ " + calculateTax();
+	}
 
 	@Override
 	public double calculateTax() {

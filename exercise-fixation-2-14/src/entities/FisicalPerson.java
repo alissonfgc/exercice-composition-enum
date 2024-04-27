@@ -20,6 +20,11 @@ public class FisicalPerson extends Taxpayer{
 	public void setHealthcareExpenses(double healthcareExpenses) {
 		this.healthcareExpenses = healthcareExpenses;
 	}
+	
+	@Override
+	public String toString() {
+		return getName() + ": $ " + calculateTax();
+	}
 
 	@Override
 	public double calculateTax() {
