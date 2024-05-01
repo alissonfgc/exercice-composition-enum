@@ -23,7 +23,7 @@ public class LegalPerson extends Taxpayer{
 	
 	@Override
 	public String toString() {
-		return getName() + ": $ " + calculateTax();
+		return getName() + ": $ " + String.format("%.2f", calculateTax());
 	}
 
 	@Override
