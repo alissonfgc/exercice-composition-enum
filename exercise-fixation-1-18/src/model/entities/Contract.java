@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Contract {
+
 	private Integer number;
 	private LocalDate date;
 	private Double totalValue;
@@ -42,13 +43,13 @@ public class Contract {
 	public void setTotalValue(Double totalValue) {
 		this.totalValue = totalValue;
 	}
+	
+	public List<Installment> getInstallments() {
+		return installments;
+	}
 
 	public void addInstallment(Installment installments) {
 		this.installments.add(installments);
-	}
-
-	public List<Installment> getInstallments() {
-		return installments;
 	}
 
 }

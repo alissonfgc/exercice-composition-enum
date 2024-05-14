@@ -6,10 +6,12 @@ import java.util.Scanner;
 import model.entities.Contract;
 import model.entities.Installment;
 import model.entities.services.ContractService;
+import model.entities.services.PaypalService;
 
 public class Program {
 
 	public static void main(String[] args) {
+
 		Locale.setDefault(Locale.US);
 		Scanner sc = new Scanner(System.in);
 
@@ -26,16 +28,16 @@ public class Program {
 
 		Contract obj = new Contract(number, date, totalValue);
 
-		ContractService service = new ContractService();
+		ContractService service = new ContractService(new PaypalService());
 
 		service.ProcessContract(obj, numberOfInstallments);
 
 		System.out.print("Parcelas:");
 
 		for (Installment i : obj.getInstallments()) {
-			StringBuilder sb = new StringBuilder();
-			sb.append("\n" + i.getDueDate().format(Contract.fmt) + " - " + i.getAmount());
-			System.out.print(sb);
+			
+			System.out.print(i.toString());
+			
 		}
 
 		sc.close();

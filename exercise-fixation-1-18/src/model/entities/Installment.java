@@ -3,6 +3,7 @@ package model.entities;
 import java.time.LocalDate;
 
 public class Installment {
+
 	private LocalDate dueDate;
 	private Double amount;
 
@@ -27,4 +28,11 @@ public class Installment {
 		this.amount = amount;
 	}
 
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append("\n" + dueDate.format(Contract.fmt) + " - " + String.format("%.2f", amount));
+		return sb.toString();
+	}
+	
 }
